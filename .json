@@ -1,0 +1,12 @@
+{
+  "category": "CRM / Dynamics 365",
+  "severity": "High",
+  "suspected_root_cause": "Malformed OData entity reference or unmapped null GUID on the parentcustomerid lookup field in Dataverse.",
+  "troubleshooting_steps": [
+    "Open the Power Automate run history and inspect the raw inputs of the 'Add_New_Contact' step.",
+    "Verify that 'parentcustomerid' is formatted using proper OData bind syntax: /accounts(GUID) or /contacts(GUID).",
+    "Add a coalesce() or conditional check in the flow expression to handle empty/null parent records gracefully."
+  ],
+  "suggested_user_reply": "Hi team, we've identified a field mapping issue in the Dynamics registration flow and are updating the lookup syntax now.",
+  "confidence_score": 0.95
+}
